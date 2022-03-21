@@ -30,7 +30,7 @@ let orderNumber = 1; /*номер вопроса*/
 let textOfNumber;
 let gameRun = true;
 
-const orderNumberField = document.getElementById('orderNumberField'); /*номер вопроса хз зачем*/
+const orderNumberField = document.getElementById('orderNumberField'); /*номер вопроса хз зачем  ${answerNumber }*/
 const answerField = document.getElementById('answerField');/*текст вопроса что ли хз вы загадали число*/
 
 function textNumber() {
@@ -57,16 +57,22 @@ function textNumber() {
                 }    
         }
 
-    if (answerNumber < 0) {
-        textOfNumber = 'минус ' + textOfNumber;
+    if (answerNumber == 0) {textOfNumber = "ноль"}
+    if (textOfNumber.length > 20) {
+        textOfNumber =  answerNumber.toString();
     }
+        else if (answerNumber < 0) {
+            textOfNumber = 'минус ' + textOfNumber;
+        }
+    
     return textOfNumber;
 }
+
 
 textNumber();
 
 orderNumberField.innerText = orderNumber;
-answerField.innerText = `Вы загадали число ${textOfNumber } ${answerNumber }?`;
+answerField.innerText = `Вы загадали число ${textOfNumber }?`;
 
 
 document.getElementById('btnOver').addEventListener('click', function () {
@@ -88,13 +94,13 @@ document.getElementById('btnOver').addEventListener('click', function () {
             let phraseRandom1 = Math.round( Math.random()*2);
             switch (phraseRandom1){
                 case 0:
-                    answerField.innerText = `Вы загадали число ${textOfNumber } ${answerNumber }?`; 
+                    answerField.innerText = `Вы загадали число ${textOfNumber }?`; 
                     break;
                 case 1:
-                    answerField.innerText = `Наверное, это число ${textOfNumber } ${answerNumber }?`;
+                    answerField.innerText = `Наверное, это число ${textOfNumber }?`;
                     break;
                 case 2:
-                    answerField.innerText = `Это слишком просто! Ваше число ${textOfNumber } ${answerNumber }?`;
+                    answerField.innerText = `Это слишком просто! Ваше число ${textOfNumber }?`;
                     break;
             }
         }
@@ -120,13 +126,13 @@ document.getElementById('btnLess').addEventListener('click', function () {
             let phraseRandom2 = Math.round( Math.random()*2);
             switch (phraseRandom2){
                 case 0:
-                    answerField.innerText = `Сейчас угадаю! Это ${textOfNumber } ${answerNumber }?`; 
+                    answerField.innerText = `Сейчас угадаю! Это ${textOfNumber }?`; 
                     break;
                 case 1:
-                    answerField.innerText = `Вероятно, это ${textOfNumber } ${answerNumber }?`;
+                    answerField.innerText = `Вероятно, это ${textOfNumber }?`;
                     break;
                 case 2:
-                    answerField.innerText = `Ваше число ${textOfNumber } ${answerNumber }?`;
+                    answerField.innerText = `Ваше число ${textOfNumber }?`;
                     break;
             }
         }
@@ -138,16 +144,16 @@ document.getElementById('btnEqual').addEventListener('click', function () {
         let phraseRandom3 = Math.round( Math.random()*3);
         switch (phraseRandom3){
             case 0:
-                answerField.innerText = `Я всегда угадываю!` ; 
+                answerField.innerText = `Я всегда угадываю!\n\u{1F600}` ; 
                 break;
             case 1:
-                answerField.innerText = `Опять угадал!`;
+                answerField.innerText = `Опять угадал!\n\u{1F601}`;
                 break;
             case 2:
-                answerField.innerText = `Угадал, как всегда!`;
+                answerField.innerText = `Угадал, как всегда!\n\u{1F609}`;
                 break;
             case 3:
-                answerField.innerText = `Я угадал!`;
+                answerField.innerText = `Я угадал!\n\u{1F680}`;
                 break;
         }
         document.body.style.backgroundImage='url(4A5.gif)';
