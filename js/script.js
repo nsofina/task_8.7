@@ -8,30 +8,80 @@ const arrayNumber20_90 = ['', '', 'двадцать', 'тридцать', 'со�
 const arrayNumber100_900 = ['', 'сто', 'двести', 'триста', 'четыреста', 'пятьсот', 'шестьсот',  
                         'семьсот', 'восемьсот', 'девятьсот'];
 
-let minValue = parseInt(prompt('Минимальное значение числа для игры','0'));
+
+let close_modal = document.getElementById('btn');
+let close_modal2 = document.getElementById('btn2');
+let close_modal3 = document.getElementById('btn3');
+let close_modal4 = document.getElementById('btn4');
+let modal = document.getElementById('modal');
+let modal2 = document.getElementById('modal2');
+let modal3 = document.getElementById('modal3');
+let modal4 = document.getElementById('modal4');
+let text4 = document.getElementById('modal_txt4');
+let minValue;
+let maxValue;
+
+close_modal.onclick = function() { 
+        modal.classList.add('modal_vis');
+        modal2.classList.add('modal_vis2');
+}  
+
+close_modal2.onclick = function(event) {
+        event.preventDefault();
+        minValue = parseInt(document.getElementById("minValue").value) || 0;
+        minValue = (minValue < -999) ? -999 : minValue;
+        minValue = (minValue > 999) ? -999 : minValue;
+        modal2.classList.remove('modal_vis2'); 
+        modal3.classList.add('modal_vis3');
+        
+}   
+
+close_modal3.onclick = function(event) {
+    event.preventDefault();
+    maxValue = parseInt(document.getElementById("maxValue").value) || 100;
+    maxValue = (maxValue > 999) ? 999 : maxValue;
+    maxValue = (maxValue < -999) ? 999 : maxValue;
+    text4.textContent = `Загадайте любое целое число от ${minValue} до ${maxValue}, а я его угадаю`;
+    modal3.classList.remove('modal_vis3'); 
+    modal4.classList.add('modal_vis4');
+} 
+
+close_modal4.onclick = function() {
+        modal4.classList.remove('modal_vis4');
+        game();   
+}
+
+
+/*let minValue = parseInt(prompt('Минимальное значение числа для игры','0'));
 
 if(Number.isNaN(minValue)) {
     minValue = 0;
 }
 
+minValue = parseInt(document.getElementById("minValue").value) || 0;
+
 minValue = (minValue < -999) ? -999 : minValue;
 
 let maxValue = parseInt(prompt('Максимальное значение числа для игры','100'));
 
-if(Number.isNaN(maxValue)) {
+maxValue = parseInt(document.getElementById("maxValue").value) || 100;
+
+/*if(Number.isNaN(maxValue)) {
     maxValue = 100;
 }
 
 maxValue = (maxValue > 999) ? 999 : maxValue;
 
-alert(`Загадайте любое целое число от ${minValue} до ${maxValue}, а я его угадаю`);
+alert(`Загадайте любое целое число от ${minValue} до ${maxValue}, а я его угадаю`);*/
+
+function game () {
 let answerNumber  = Math.floor((minValue + maxValue) / 2);/*число, которое будет предлагать программа, его округление до меньшего*/
 let orderNumber = 1; /*номер вопроса*/
 let textOfNumber;
 let gameRun = true;
 
-const orderNumberField = document.getElementById('orderNumberField'); /*номер вопроса хз зачем  ${answerNumber }*/
-const answerField = document.getElementById('answerField');/*текст вопроса что ли хз вы загадали число*/
+const orderNumberField = document.getElementById('orderNumberField');
+const answerField = document.getElementById('answerField');
 
 function textNumber() {
     let textCount = Math.abs(answerNumber);
@@ -67,7 +117,6 @@ function textNumber() {
     
     return textOfNumber;
 }
-
 
 textNumber();
 
@@ -156,8 +205,8 @@ document.getElementById('btnEqual').addEventListener('click', function () {
                 answerField.innerText = `Я угадал!\n\u{1F680}`;
                 break;
         }
-        document.body.style.backgroundImage='url(4A5.gif)';
+        document.body.style.backgroundImage='url(../image/4A5.gif)';
         gameRun = false;
     }
 })
-
+}

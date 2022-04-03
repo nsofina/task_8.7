@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="style.css" type="text/css"/>
+    <link rel="stylesheet" href="../css/style.css" type="text/css"/>
 </head>
 <body>
 <div class="container">
@@ -37,6 +37,39 @@
         </div>
     </div>
 </div>
-<script src="script.js"></script>
+
+<div id="modal"  class="modal">
+    <div class="modal_txt">
+        <p>Я могу угадать любое число!<br>
+        <button id="btn">OK</button></p>
+</div>
+</div>
+
+<div id="modal2"  class="modal2">
+    <div class="modal_txt">
+    <form>Минимальное значение числа для игры<br>
+        <input   class="input" type="text" id="minValue" value="0">
+        <button id="btn2" type="submit">OK</button>
+    </form>
+</div>
+</div>
+
+<div id="modal3"  class="modal3">
+    <div class="modal_txt">
+    <form>Максимальное значение числа для игры<br>
+        <input class="input" type="text" id="maxValue" value="100">
+        <button id="btn3" type="submit">OK</button>
+    </form>
+</div>
+</div>
+
+<div id="modal4"  class="modal4">
+    <div class="modal_txt" id="modal_flex">
+        <div id="modal_txt4" ></div>
+        <button id="btn4">Начали!</button>
+    </div>
+</div>
+
+<script src="../js/script.js"></script>
 </body>
 </html>

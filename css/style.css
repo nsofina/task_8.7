@@ -1,0 +1,88 @@
+.game-card {
+    height: 100vh;
+    font-family: 'Open Sans', monospace;
+}
+
+.modal, .modal2, .modal3, .modal4 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0; 
+}
+
+.modal {
+    display: block;  
+}
+
+.modal2, .modal3, .modal4 {
+    display: none;
+}
+
+.modal_vis {
+    display: none;
+}
+
+.modal_vis2, .modal_vis3, .modal_vis4 {
+    display: block;
+}
+
+.modal_txt {
+    background-color: rgb(215, 250, 215);
+    color: #000;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    max-width: 600px;
+    height: 300px;
+    top: 30%;
+    margin-top: -50px;
+    margin: 0 auto;
+    padding: 30px   ;
+    position: relative;
+    border-radius: 2%;
+    
+}
+
+#modal_flex {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal_txt {
+    font-size: 20px;
+    color: rgb(8, 60, 24);
+}
+
+#btn, #btn2, #btn3 {
+    width: 100px;
+    height: 50px;
+    background-color: rgb(71, 228, 118);
+    border: rgb(8, 60, 24) solid;
+    border-radius: 5%;
+    margin-top: 50px;
+    margin-left: 70px;
+}
+
+#btn4 {
+    width: 150px;
+    height: 50px;
+    background-color: rgb(71, 228, 118);
+    border: rgb(8, 60, 24) solid;
+    border-radius: 5%;
+    margin-top: 50px;
+      
+}
+
+.input {
+    width: 100px;
+    height: 50px;
+    margin-top: 50px;
+    margin-left: 40px;
+    border: rgb(111, 236, 149) solid;
+    border-radius: 5%;
+}
