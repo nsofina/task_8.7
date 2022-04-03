@@ -29,8 +29,8 @@ close_modal.onclick = function() {
 close_modal2.onclick = function(event) {
         event.preventDefault();
         minValue = parseInt(document.getElementById("minValue").value) || 0;
-        minValue = (minValue < -999) ? -999 : minValue;
-        minValue = (minValue > 999) ? -999 : minValue;
+        minValue = (minValue < -999 || minValue > 999) ? -999 : minValue;
+        /*minValue = (minValue > 999) ? -999 : minValue;*/
         modal2.classList.remove('modal_vis2'); 
         modal3.classList.add('modal_vis3');
         
@@ -39,8 +39,8 @@ close_modal2.onclick = function(event) {
 close_modal3.onclick = function(event) {
     event.preventDefault();
     maxValue = parseInt(document.getElementById("maxValue").value) || 100;
-    maxValue = (maxValue > 999) ? 999 : maxValue;
-    maxValue = (maxValue < -999) ? 999 : maxValue;
+    maxValue = (maxValue > 999 || maxValue < -999) ? 999 : maxValue;
+    /*maxValue = (maxValue < -999) ? 999 : maxValue;*/
     text4.textContent = `Загадайте любое целое число от ${minValue} до ${maxValue}, а я его угадаю`;
     modal3.classList.remove('modal_vis3'); 
     modal4.classList.add('modal_vis4');
