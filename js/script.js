@@ -205,7 +205,7 @@ document.getElementById('btnEqual').addEventListener('click', function () {
                 answerField.innerText = `Я угадал!\n\u{1F680}`;
                 break;
         }
-        document.body.style.backgroundImage='url(../image/nebo.jpg)';
+        document.body.style.backgroundImage='url(../nebo.jpg)';
         gameRun = false;
     }
 })
