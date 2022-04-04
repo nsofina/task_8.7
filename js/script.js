@@ -189,6 +189,7 @@ document.getElementById('btnLess').addEventListener('click', function () {
 })
 
 document.getElementById('btnEqual').addEventListener('click', function () {
+    document.body.style.backgroundImage = "url(../image/nebo.jpg)";
     if (gameRun){
         let phraseRandom3 = Math.round( Math.random()*3);
         switch (phraseRandom3){
@@ -205,7 +206,6 @@ document.getElementById('btnEqual').addEventListener('click', function () {
                 answerField.innerText = `Я угадал!\n\u{1F680}`;
                 break;
         }
-        document.body.style.backgroundImage='url(../nebo.jpg)';
         gameRun = false;
     }
 })
