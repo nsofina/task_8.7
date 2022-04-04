@@ -205,7 +205,7 @@ document.getElementById('btnEqual').addEventListener('click', function () {
                 answerField.innerText = `Я угадал!\n\u{1F680}`;
                 break;
         }
-        document.body.style.backgroundImage='url(https://github.com/nsofina/task_8.7/blob/master/image/4A5.gif)';
+        document.body.style.backgroundImage='url("https://github.com/nsofina/task_8.7/blob/master/image/4A5.gif")';
         gameRun = false;
     }
 })
