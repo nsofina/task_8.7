@@ -1,5 +1,11 @@
 body {
     background-image: url('../image/river.gif');
+    opacity: 0.9;
+}
+
+.еqual {
+    background-image: url('../image/nebo.jpg');
+    opacity: 0.9;
 }
 
 .game-card {
